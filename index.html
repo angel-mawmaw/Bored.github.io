@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ninang💖</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #ffc6c7, #ffb3ba);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* LOGIN PAGE */
+  .login-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+  }
+
+  .login-box h2 {
+    color: #b3003b;
+    margin-bottom: 15px;
+  }
+
+  .login-box input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ff7a8a;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .login-box button {
+    background: #ff4f70;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .login-box button:hover {
+    background: #d7385e;
+  }
+
+  /* MAIN PAGE */
+  .main {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 30px;
+    animation: fadeIn 2s ease;
+  }
+
+  h1 {
+    color: #b3003b;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .envelope {
+    position: relative;
+    width: 250px;
+    height: 160px;
+    background: #ff758c;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .envelope::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 250px;
+    height: 120px;
+    background: #ff8fa3;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  }
+
+  .letter {
+    position: absolute;
+    width: 90%;
+    height: 140px;
+    background: white;
+    border-radius: 10px;
+    top: 110%;
+    left: 5%;
+    padding: 10px;
+    font-size: 14px;
+    color: #5a2a2a;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: slideUp 2s forwards;
+    animation-delay: 1s;
+    overflow-y: auto;
+  }
+
+  @keyframes slideUp {
+    to { top: 10%; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .photos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .photos img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    margin: 8px;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInPhotos 2s ease forwards;
+  }
+
+  .photos img:nth-child(1) { animation-delay: 2s; }
+  .photos img:nth-child(2) { animation-delay: 4s; }
+  .photos img:nth-child(3) { animation-delay: 6s; }
+
+  @keyframes fadeInPhotos {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Hearts floating */
+  .heart {
+    position: absolute;
+    color: #ff3366;
+    font-size: 18px;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes floatHearts {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* Music Button */
+  .music-btn {
+    background: #ff4f70;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+  }
+
+  .music-btn:hover {
+    background: #d7385e;
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="login-box" id="loginPage">
+  <h2>🎂 Ninang’s Birthday Access 🎂</h2>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <br>
+  <button onclick="login()">Open Gift 💝</button>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="main" id="mainPage">
+  <h1>💌 Happy Birthday Ninang Nhing 💌</h1>
+
+  <div class="envelope">
+    <div class="letter">
+      <p>Dear Ninang,</p>
+      <p>Hi Ninang! How are you doing? My account got suspended on fb that’s why I can’t reach out to you. Anyways, Happy birthday! 🎉 I wish you all the best wishes.</p>
+      <p>I want to sincerely thank you for being my ninang. I’m very grateful to you for giving me things to afford my luho that my mom can’t give to me. I’m very very thankful that you’re my ninang.</p>
+      <p>Also I want to thank you for being there for me and for loving me as your inaanak. I love you so much ninang. Please keep an eye on your health at all times. Inay and mom miss you a lot.</p>
+      <p>Again, happy birthday Ninang! I love you so so muchhh 💖</p>
+      <p style="text-align: right;">– sincerely ,Angel</p>
+    </div>
+  </div>
+
+  <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+  <div class="photos">
+    <img src="ninang1.jpg" alt="Ninang 1">
+    <img src="ninang2.jpg" alt="Ninang 2">
+    <img src="ninang3.jpg" alt="Ninang 3">
+  </div>
+
+  <!-- Floating hearts -->
+  <span class="heart" style="left:10px;">💖</span>
+  <span class="heart" style="right:10px;">💖</span>
+  <span class="heart" style="left:10px; top:30%;">💞</span>
+  <span class="heart" style="right:10px; top:50%;">💗</span>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop>
+    <source src="these-memories.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+function login() {
+  const name = document.getElementById("nameInput").value.trim().toLowerCase();
+  if (name === "nhing") {
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("mainPage").style.display = "flex";
+  } else {
+    alert("Oops! Only Nhing can open this 💝");
+  }
+}
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const btn = document.querySelector(".music-btn");
+  if (music.paused) {
+    music.play();
+    btn.textContent = "⏸️ Pause Music";
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Play Music";
+  }
+}
+</script>
+
+</body>
+</html>
